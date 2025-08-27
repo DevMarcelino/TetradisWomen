@@ -1,0 +1,341 @@
+:root {
+    --azul-principal: #1E3A8A;
+    --azul-claro: #3B82F6;
+    --dourado: #D4AF37;
+    --dourado-claro: #FDE68A;
+    --branco: #FFFFFF;
+    --cinza-claro: #F3F4F6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, var(--azul-principal) 0%, var(--azul-claro) 100%);
+}
+
+/* Header */
+header {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--azul-principal);
+}
+
+.logo span {
+    color: var(--dourado);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--azul-principal);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--dourado);
+}
+
+/* Hero Section */
+.hero {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect width="1200" height="800" fill="%231E3A8A"/><circle cx="200" cy="200" r="50" fill="%23D4AF37" opacity="0.1"/><circle cx="1000" cy="300" r="80" fill="%23D4AF37" opacity="0.1"/><circle cx="600" cy="600" r="60" fill="%23D4AF37" opacity="0.1"/></svg>') center/cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    color: var(--branco);
+    text-align: center;
+    padding-top: 80px;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.cta-button {
+    background: var(--dourado);
+    color: var(--azul-principal);
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.cta-button:hover {
+    background: var(--dourado-claro);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+/* About Section */
+.about {
+    background: var(--branco);
+    padding: 80px 0;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-text h2 {
+    color: var(--azul-principal);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+    color: #666;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.feature {
+    background: var(--cinza-claro);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.feature i {
+    font-size: 2rem;
+    color: var(--dourado);
+    margin-bottom: 1rem;
+}
+
+/* Tickets Section */
+.tickets {
+    background: var(--cinza-claro);
+    padding: 80px 0;
+}
+
+.tickets h2 {
+    text-align: center;
+    color: var(--azul-principal);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.ticket-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.ticket-card {
+    background: var(--branco);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 2px solid transparent;
+    transition: all 0.3s;
+}
+
+.ticket-card:hover {
+    border-color: var(--dourado);
+    transform: translateY(-5px);
+}
+
+.ticket-card.popular {
+    border-color: var(--dourado);
+    position: relative;
+}
+
+.ticket-card.popular::before {
+    content: 'MAIS POPULAR';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--dourado);
+    color: var(--azul-principal);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.ticket-card h3 {
+    color: var(--azul-principal);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.price {
+    font-size: 2.5rem;
+    color: var(--dourado);
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.ticket-features {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.ticket-features li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.ticket-features li:last-child {
+    border-bottom: none;
+}
+
+/* Location Section */
+.location {
+    background: var(--branco);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.location h2 {
+    color: var(--azul-principal);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.location-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.location-info {
+    background: var(--cinza-claro);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+}
+
+.map-placeholder {
+    background: linear-gradient(135deg, var(--azul-claro) 0%, var(--azul-principal) 100%);
+    height: 300px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--branco);
+    font-size: 1.2rem;
+}
+
+/* Footer */
+footer {
+    background: var(--azul-principal);
+    color: var(--branco);
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    color: var(--dourado);
+    margin-bottom: 1rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: var(--branco);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--dourado);
+}
+
+.copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+    opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+    }
+    
+    nav ul {
+        gap: 1rem;
+    }
+}
